@@ -1,0 +1,17 @@
+Use case possibilities:
+1.	Create query
+2.	Select a repository to search
+3.	Search a repository
+4.	Limit query to code changes or to commit messages
+5.	Filter results by time frame
+6.	Filter results by contributor
+7.	Interact with visualization (expand result for more info)
+8.	Interact with visualization (follow result to commit)
+9.	Refine existing query and update results
+10.	Sort results by file name
+11.	Sort results by author
+12.	Sort results by revision date
+13.	Sort results by commit message
+14.	Export results to file
+15.	Import results from file
+16.	Re-search query from imported file
