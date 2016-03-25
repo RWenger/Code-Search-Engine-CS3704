@@ -1,0 +1,201 @@
+Use Case 4 ...
+
+------------------------------------------
+
+Use Case 5: Filter what is being searched for
+Description: User has typed in a query and wants to filter the results for the search
+Primary Actor
+	A researcher or programmer interested in a GitHub repository
+Stakeholders
+	The searcher ¬- Needs accurate, fast results
+	The people the searcher is searching on behalf of (ex: their team)
+Preconditions
+	The user has the URL of a Github repository of interest and a query in mind
+Success Guarantee
+	Results are filtered based on the options (filters) the user selected
+Main Success Scenario
+	1. The user inputs the URL of the desired GitHub repository 
+	2. The user types in the query
+	3. The user selects filters to show results by (ex: show only commits from the past week or by X contributor)
+	4. After clicking submit, the system finds all results for the query matching both the keyword and filters. 
+	5. The system displays these results to the user 
+	
+Extensions
+	4a. The repository doesn’t exist:
+		1 . The user inputs the URL of the desired Github repository
+		2. The user then inputs a query.
+		3. After clicking submit, the system attempts to search the repository, but fails due to 			    the repository not being found.
+		4. The system generates an error and displays it to the user
+	
+	4b. No results were found:
+		1 . The user inputs the url of the desired Github repository
+		2. The user then inputs a query
+		3. After clicking submit, the system attempts to search the repository
+		but does not find any results
+		4. The system generates an error and displays it to the user	
+			4a. The system suggest alternate search filters based on what it did find
+	
+Special Requirements: 
+	-Results must be returned quickly and there should be a variety of relevant filters 
+	-Filters should not make the screen looked cluttered and difficult for mobile browser users
+
+Technology and Data Variation List
+	3a. Filtering may be done in a few ways, but chiefly either by filtering as it searches or first finding all the textual matches, then filtering 
+	3a. Filtering may be done in JavaScript, PHP, or other applicable languages 
+	4a. Searching may use JavaScript, PHP, or other applicable languages.
+	4b. Searching may be done for a query string or keywords 
+
+Frequency of Occurrence
+	
+Use Case 6: Filter what is being searched for
+	Enable/disable suggested search terms based on history
+
+-------------------------------------------------------------------------------------
+
+Use Case 9...
+
+-------------------------------------------------------------------------------------
+
+Use case 13: Create new query from attribute of current result
+
+Primary actor:
+    Service user
+
+Stakeholders and interests:
+    Service user: wants to search along an attribute seen in current results
+
+Preconditions:
+    The service user is viewing a non-empty result set.
+
+Success guarantee:
+    The service displays the results of performing a query on an attribute seen in the original result set.
+
+Main success scenario:
+    1.  The user hovers over an attribute of a displayed result.
+    2.  The service displays a context menu giving options for what to do with the hovered-over attribute.
+    3.  The user selects the "Search on this attribute" option.
+    4.  The service queries on the hovered attribute and displays the results.
+
+Extensions:
+    None.
+
+Special requirements:
+    The user must be on a device that supports hovering.
+
+Technology and data variation list:
+    None.
+
+Frequency of occurrence:
+    Once per displayed result set.
+
+-------------------------------------------------------------------------------------
+
+Use case 14: Export results to file
+
+Primary actor:
+    Service user
+
+Stakeholders and interests:
+    Service user: wants to show results to others or store them for later viewing
+    (Possible) others: want to view exported results
+
+Preconditions:
+    The service user is viewing a result set.
+
+Success guarantee:
+    A plaintext file containing the exported results is created and saved to the user's computer.
+
+Main success scenario:
+    1.  The user selects the "Export to File" option from the results page.
+    2.  The service creates a plaintext file containing the results.
+    3.  The service opens a dialog windox asking the user to select a location to which to save the file and a name for the file.
+    4.  The user selects a save location and a file name.
+    5.  The user selects the "Save" option from the save dialog window.
+    6.  The service saves the export file to the selected location.
+
+Extensions:
+    5a: The user selects to "Cancel" in the save dialog window rather than "Save"
+        1.  The service closes the save dialog window and clears the file it created.
+    6a: Invalid file name or save location
+        1.  The service informs the user that their selected file name or save location is invalid, and prompts them to change it.
+
+Special requirements:
+    1.  The service should be able to save result sets of any size, even large ones or empty ones.
+
+Technology and data variation list:
+    None.
+
+Frequency of occurrence:
+    As often as the user desires—no benefit will be gained after the first occurrence per result set.
+
+-------------------------------------------------------------------------------------
+
+Use case 15: Import results from file
+
+Primary actor: Service user
+
+Stakeholders and interests:
+    Service user: Wants to see results of a previous search
+
+Preconditions:
+    The service user has previously exported a result set, and is able to access it.
+
+Success guarantee:
+    The result set represented by the file on the user's computer is accurately displayed as though it had just been searched.
+
+Main success scenario:
+    1.  The user selects the "Import" option.
+    2.  The service opens a file selection dialog window.
+    3.  The user navigates to a file containing a previously-exported result set and selects it.
+    4.  The user selects the "Open" option from the file selection dialog window.
+    5.  The service imports the file and creates a result set containing the file's data.
+    6.  The service displays the created result set.
+
+Extensions:
+    4a: The user selects to "Cancel" in the file selection dialog window rather than "Open"
+        1.  The service closes the file selection dialog window.
+    5a: File is selected with invalid data
+        1.  The service informs the user that the selected file does not contain a valid result set.
+
+Special requirements:
+    1.  The service should be able to load result sets of any size, even large ones or empty ones.
+
+Technology and data variation list:
+    None
+
+Frequency of occurrence:
+    As often as the user desires.
+
+-------------------------------------------------------------------------------------
+
+Use case 16: Re-search query from imported file
+
+Primary actor:
+    Service user
+
+Stakeholders and interests:
+    Service user: wants to see updated results for a previously-saved query
+
+Preconditions:
+    The service user is displaying the contents of an imported result set.
+
+Success guarantee:
+    The service displays the results of executing the query of the imported result set on the most recent data.
+
+Main success scenario:
+    1.  The user selects the "Autofill query" option on the results page.
+    2.  The service populates the query text field with the query that produced the displayed result set.
+    3.  The user selects the "Query" option.
+    4.  The service displays the results of running the query on the most recent data.
+
+Extensions:
+    None.
+
+Special requirements:
+    None.
+
+Technology and data variation list:
+    None.
+
+Frequency of occurrence:
+    Whenever the user desires—no benefit after the first occurrence per imported file.
