@@ -1,0 +1,54 @@
+Use Case 4 ...
+------------------------------------------
+Use Case 5: Filter what is being searched for
+Description: User has typed in a query and wants to filter the results for the search
+Primary Actor
+	A researcher or programmer interested in a GitHub repository
+Stakeholders
+	The searcher ¬- Needs accurate, fast results
+	The people the searcher is searching on behalf of (ex: their team)
+Preconditions
+	The user has the URL of a Github repository of interest and a query in mind
+Success Guarantee
+	Results are filtered based on the options (filters) the user selected
+Main Success Scenario
+	1. The user inputs the URL of the desired GitHub repository 
+	2. The user types in the query
+	3. The user selects filters to show results by (ex: show only commits from the past week or by X contributor)
+	4. After clicking submit, the system finds all results for the query matching both the keyword and filters. 
+	5. The system displays these results to the user 
+	
+Extensions
+	4a. The repository doesn’t exist:
+		1 . The user inputs the URL of the desired Github repository
+		2. The user then inputs a query.
+		3. After clicking submit, the system attempts to search the repository, but fails due to 			    the repository not being found.
+		4. The system generates an error and displays it to the user
+	
+	4b. No results were found:
+		1 . The user inputs the url of the desired Github repository
+		2. The user then inputs a query
+		3. After clicking submit, the system attempts to search the repository
+		but does not find any results
+		4. The system generates an error and displays it to the user	
+			4a. The system suggest alternate search filters based on what it did find
+	
+Special Requirements: 
+	-Results must be returned quickly and there should be a variety of relevant filters 
+	-Filters should not make the screen looked cluttered and difficult for mobile browser users
+
+Technology and Data Variation List
+	3a. Filtering may be done in a few ways, but chiefly either by filtering as it searches or first finding all the textual matches, then filtering 
+	3a. Filtering may be done in JavaScript, PHP, or other applicable languages 
+	4a. Searching may use JavaScript, PHP, or other applicable languages.
+¬	4b. Searching may be done for a query string or keywords 
+
+Frequency of Occurrence
+	
+Use Case 6: Filter what is being searched for
+	Enable/disable suggested search terms based on history
+
+-------------------------------------------------------------------------------------
+
+
+Use Case 9...
